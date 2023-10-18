@@ -1,0 +1,8 @@
+---
+title: "Learning Markdown"
+author: "Leah Camonayan"
+format: html
+editor: visual
+---
+
+## ![](illustrations/PENGUINSCHUCHU.png)

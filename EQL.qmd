@@ -1,0 +1,77 @@
+---
+title: "Exploring Quarto and Latex" 
+author: "Leah A. Camonayan"         
+format: pdf                         
+editor: visual 
+number-sections: true
+---
+
+*4.1. ANTIDIFFERENTIATION AND INDEFINITE INTEGRALS*
+
+## 4.1.2 Integration by Substitution
+
+### Theorem 4.1.11 (Substitution Rule)
+
+::: {#thm-sub_rule}
+If $u= g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is continues on $I$, then
+
+$$
+\int f(g(x))\cdot g'(x)dx=\int f(u)du.
+$$
+:::
+
+::: {#exm-sub_rule}
+**Example 4.1.12.**
+
+1.  $\int(1-4x)^\frac{1}{2}dx$
+
+    If we let $u = 1-4x$, then $du=-4dx$. We multiply the integrand by $\frac{-4}{-4}$.Thus, $$ \int(1-4 x)^{1 / 2} d x=\int(1-4 x)^{1 / 2} \cdot \frac{-4}{-4} d x=\int u^{1 / 2}\left(-\frac{d u}{4}\right)=-\frac{1}{4} \int u^{1 / 2} d u=-\frac{1}{4} \cdot \frac{2 u^{3 / 2}}{3}+C.$$
+
+    We put the final answer in terms of x by substituting $u=1-4 x.$ Therefore, $$
+    \int(1-4 x)^{1 / 2} d x=\frac{(1-4 x)^{3 / 2}}{6}+C .$$
+
+2.  $\int x^2\left(x^3-1\right)^{10} dx$
+
+    Let $u=x^{3}-1.$ Then $d u=3 x^{2} d x$ or $\frac{d u}{3}=x^{2} d x.$ By substitution, $$\int x^{2}\left(x^{3}-1\right)^{10} d x=\frac{d u}{3}=\frac{1}{3} \int u^{10} d u=\frac{u^{11}}{33}+C=\frac{\left(x^{3}-1\right)^{11}}{33}+C$$
+
+3.  $\int \frac{x}{\left(x^{2}+1\right)^{3}} d x$
+
+    Let $u=x^{2}+1.$ Then $d u=2 x d x,$ or $\frac{d u}{2}=x d x.$ By substitution, $$\frac{x}{\left(x^{2}+1\right)^{3}} d x=\frac{1}{2} \int u^{-3} d u=\frac{1}{2} \cdot \frac{u^{-2}}{-2}+C=-\frac{1}{4\left(x^{2}+1\right)^{2}}+C.$$
+
+4.  $\int \cos ^{4} x \sin x d x$ Let $u=\cos x.$ Then $du=-\sin x d x,$ or $-du=\sin x d x.$ By substitution, $$\int \cos ^{4} x \sin x d x=-\int u^{4} d u=-\frac{u^{5}}{5}+C=-\frac{\cos ^{5} x}{5}+C.$$
+
+5.  $\int x \sec ^{3}\left(x^{2}\right) \tan \left(x^{2}\right) d x$
+
+    Let $u=\sec \left(x^{2}\right).$ Then $du=\sec \left(x^{2}\right) \tan \left(x^{2}\right) \cdot 2xdx,$ or $\frac{d u}{2}=\sec \left(x^{2}\right) \tan \left(x^{2}\right) \cdot x d x.$ By substitution, $$\begin{aligned}
+    \int x\sec^3 \left(x^2\right)\tan\left(x^2\right)dx &= \int \sec^2 \left(x^2\right)\sec\left(x^2\right)\tan\left(x^2\right)\cdot xdx \\ &= \int u^2du=\frac{1}{2}\cdot \frac{u^3}{3}+C \\& = \frac{\sec^3 \left(x^2\right)}{6} + C.
+    \end{aligned}$$
+
+6.  $\int \frac{\tan \frac{1}{s}+\tan \frac{1}{s} \sin \frac{1}{s}}{s^{2} \cos \frac{1}{s}} d s$\
+    Let $u=\frac{1}{s}.$Then $d u=-\frac{1}{s} d s$ or $-d u=\frac{d s}{s}.$ By substitutuion, $$\begin{aligned}
+    \int \frac{\tan \frac{1}{s}+\tan \frac{1}{s} \sin \frac{1}{s}}{s^{2} \cos \frac{1}{s}} d s & =-\int \frac{\tan u+\tan u \sin u}{\cos u} d u \\
+    & =-\int\left(\sec u \tan u+\tan ^{2} u\right) d u \\
+    & =-\int\left(\sec u \tan u+\sec ^{2} u-1\right) d u \\
+    & =-(\sec u+\tan u-u)+C \\
+    & =-\sec \frac{1}{s}-\tan \frac{1}{s}+\frac{1}{s}+C
+    \end{aligned}
+    $$
+
+7.  $\int t \sqrt{t-1} d t$\
+    Let $u=t-1$ .\$ Then $u=dt.$ Also, $t=u+1.$ By substitution, $$\begin{aligned}
+    \int t \sqrt{t-1} d t & =\int(u+1) u^{1 / 2} d u=\int\left(u^{3 / 2}+u^{1 / 2}\right) d u=\frac{2 u^{5 / 2}}{5}+\frac{2 u^{3 / 2}}{3}+C \\
+    & =\frac{2(t-1)^{5 / 2}}{5}+\frac{2(t-1)^{3 / 2}}{3}+C .
+    \end{aligned}$$
+
+8.  $\int \frac{t^{3}}{\sqrt{t^{2}+3}} dt$\
+    Let $( u=t^{2}+3.$ Then $d u=2 t dt,$ or $\frac{d u}{2}=t dt.$ Also, \$ t\^{2}=u-3.\$ By substitution, $$\begin{aligned}
+    \int \frac{t^{3}}{\sqrt{t^{2}+3}} d t & =\int \frac{t^{2} \cdot t}{\sqrt{t^{2}+3}} d t=\int u^{-1 / 2}(u-3) \frac{d u}{2} \\
+    & =\frac{1}{2} \int\left(u^{1 / 2}-3 u^{-1 / 2}\right) d u=\frac{1}{2}\left(\frac{2 u^{3 / 2}}{3}-6 u^{1 / 2}\right)+C \\
+    & =\frac{\left(t^{2}+3\right)^{3 / 2}}{3}-3\left(t^{2}+3\right)^{1 / 2}+C
+    \end{aligned}$$
+
+9.  $\int \sqrt{4+\sqrt{x}} d x$ Let $u=4+\sqrt{x}.$ Then $d u=\frac{1}{2 \sqrt{x}} d x$ or $2 d u=\frac{d x}{\sqrt{x}}.$ By substitution, $\begin{aligned} \int \sqrt{4+\sqrt{x}} d x & =\int \sqrt{4+\sqrt{x}} \cdot \frac{\sqrt{x}}{\sqrt{x}} d x \\ & =\int \sqrt{4+\sqrt{x}} \cdot \sqrt{x} \cdot \frac{d x}{\sqrt{x}} \quad(\sqrt{x}=u-4) \\ & =\int u^{1 / 2} \cdot(u-4) \cdot 2 d u \\ & =\int\left(2 u^{3 / 2}-8 u^{1 / 2}\right) d u \\ & =\frac{2 \cdot 2 u^{5 / 2}}{5}-\frac{2 \cdot 8 u^{3 / 2}}{3}+C \\ & =\frac{4(4+\sqrt{x})^{5 / 2}}{5}-\frac{16(4+\sqrt{x})^{3 / 2}}{3}+C . \end{aligned}$
+:::
+
+**4.1.3 Particular Antiderivatives**
+
+Now suppose that given a function $f(x)$, we wish to find a particular antiderivatives $F(x)$ of $f(x)$ that satisfies a given condition. Such a condition is called an initial or boundary condition.
